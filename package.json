@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "migrate": " sequelize db:migrate",
-    "dev": "nodemon src/server --exec babel-node -e js",
-    "start": "node src/server",
+    "dev": "nodemon server --exec babel-node -e js",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,8 +15,10 @@
   "dependencies": {
     "apollo-server": "^2.18.2",
     "bcrpyt": "^2.0.0",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
     "nodemon": "^2.0.5",
     "sequelize": "^6.3.5",
     "sqlite3": "^5.0.0"
