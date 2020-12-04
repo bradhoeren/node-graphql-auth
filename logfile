@@ -1,0 +1,17 @@
+2020-11-30 00:45:38.586 PST [1620] LOG:  starting PostgreSQL 13.1, compiled by Visual C++ build 1914, 64-bit
+2020-11-30 00:45:38.612 PST [1620] LOG:  listening on IPv6 address "::1", port 5432
+2020-11-30 00:45:38.613 PST [1620] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-11-30 00:45:38.749 PST [6252] LOG:  database system was shut down at 2020-11-30 00:44:50 PST
+2020-11-30 00:45:38.929 PST [1620] LOG:  database system is ready to accept connections
+2020-11-30 00:45:57.930 PST [19348] FATAL:  database "brad" does not exist
+2020-11-30 00:46:04.228 PST [15776] FATAL:  role "postgres" does not exist
+2020-11-30 00:46:30.890 PST [19772] FATAL:  role "postgres" does not exist
+2020-11-30 00:47:09.021 PST [12800] FATAL:  role "postgres" does not exist
+2020-11-30 00:47:40.235 PST [16624] FATAL:  role "postgres" does not exist
+2020-11-30 00:47:44.143 PST [5136] FATAL:  role "postgres" does not exist
+2020-11-30 00:50:31.691 PST [1620] LOG:  background worker "logical replication launcher" (PID 10864) was terminated by exception 0xC000013A
+2020-11-30 00:50:31.691 PST [1620] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2020-11-30 00:50:31.692 PST [1620] LOG:  terminating any other active server processes
+2020-11-30 00:50:31.697 PST [1620] LOG:  statistics collector process (PID 10820) was terminated by exception 0xC000013A
+2020-11-30 00:50:31.697 PST [1620] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+^C

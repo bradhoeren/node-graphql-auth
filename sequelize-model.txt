@@ -1,0 +1,27 @@
+sequelize model:generate --name user --attributes user_id:UUID, username:STRING, password_hash:STRING, email:STRING, full_name:STRING, preferred_name:STRING, group:STRING, active:BOOLEAN
+
+sequelize model:generate --name institution --attributes institution_id:UUID, name:STRING, customer:BOOLEAN
+
+sequelize model:generate --name campus --attributes campus_id:UUID, name:STRING
+
+sequelize model:generate --name environment --attributes environment_id:UUID, production:BOOLEAN, instance_name:STRING, ws_inst:STRING, database_name:STRING
+
+sequelize model:generate --name database_server --attributes database_server_id:UUID, name:STRING, type:ENUM('series', 'replication', 'x25')
+
+sequelize model:generate --name site_address --attributes site_address_id:UUID, number:INTEGER, street:STRING, city:STRING, country:STRING, zip_code:STRING
+
+sequelize model:generate --name products --attributes product_id:UUID, name_short:STRING, name_long:STRING
+
+sequelize model:generate --name product_License --attributes valid_until:DATE, contract_link:STRING
+
+sequelize model:generate --name configuration --attributes configuration_id:UUID, configuration:JSONB
+
+sequelize model:generate --name configuration_type --attributes configuration_id:UUID, architecture_layer:ENUM('client_application', 'web', 'middleware', 'authentication', 'database_connection')
+
+sequelize model:generate --name contact_email --attributes contact_email_id:UUID, name:STRING, domain:STRING
+
+sequelize model:generate --name contact_person --attributes person_id:UUID, campus_id:UUID, given_name:STRING, surname:STRING, middle_name:STRING, preferred_name:STRING, active:BOOLEAN
+
+sequelize model:generate --name contact_phone --attributes number:STRING, call:BOOLEAN, text:BOOLEAN
+
+sequelize model:generate --name contact_role --attributes contact_role_id:UUID, name:STRING, description:STRING
