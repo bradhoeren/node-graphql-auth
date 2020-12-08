@@ -18,7 +18,7 @@ const resolvers = {
         throw new Error(error.message);
       }
     },
-    async allUsers(root, args, { user }) {
+    async users(root, args, { user }) {
       try {
         if (!user) throw new Error('You are not authenticated!');
         return models.User.findAll();
@@ -26,7 +26,54 @@ const resolvers = {
         throw new Error(error.message);
       }
     },
-  },
+    async institution(root, { institution_id }, { user }) {
+      try {
+        if (!user) throw new Error('You are not authenticated!');
+        return models.Institution.findByPk(institution_id);
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    async institutions(root, args, { user }) {
+      try {
+        if (!user) throw new Error('You are not authenticated!');
+        return models.Institution.findAll();
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    async campus(root, { campus_id }, { user }) {
+      try {
+        if (!user) throw new Error('You are not authenticated!');
+        return models.Campus.findByPk(campus_id);
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    async campuses(root, { user }) {
+      try {
+        if (!user) throw new Error('You are not authenticated!');
+        return models.Campus.findAll();
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+    async environment(root, { environment_id }, { user }) {
+      try {
+        if (!user) throw new Error('You are not authenticated!');
+        return models.Environment.findByPk(environment_id);
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+  async environments(root, { user }) {
+    try {
+      if (!user) throw new Error('You are not authenticated!');
+      return models.Environment.findAll();
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }},
   Mutation: {
     async registerUser(root, { username, email, password }) {
       try {
@@ -43,7 +90,7 @@ const resolvers = {
           id: user.id,
           username: user.username,
           email: user.email,
-          message: 'Authentication succesfull.',
+          message: 'Authentication successful.',
         };
       } catch (error) {
         throw new Error(error.message);
@@ -71,6 +118,24 @@ const resolvers = {
         throw new Error(error.message);
       }
     },
-  },
+    async resetPassword(root, { token, email, password }) {
+      try {
+        const user = await models.User.findOne({ where: { token, email } });
+        if (!user) {
+          throw new Error('Not a valid token or email.');
+        }
+        const isValid = await bcrypt.compare(token, user.token);
+        if (!isValid) {
+          throw new Error('Invalid token.');
+        }
+        return {
+          email: user.email,
+          message: 'Password updated successfully.',
+        };
+      } catch (error) {
+        throw new Error(error.message);
+      }
+    },
+  }
 };
 module.exports = resolvers;

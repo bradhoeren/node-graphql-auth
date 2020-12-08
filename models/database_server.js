@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       database_server_id: DataTypes.UUID,
       name: DataTypes.STRING,
       type: {
-        type: Sequelize.ENUM,
+        type: DataTypes.ENUM,
         values: ['series', 'replication', 'x25'],
       },
     },

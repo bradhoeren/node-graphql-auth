@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       configuration_id: DataTypes.UUID,
       architecture_layer: {
-        type: Sequelize.ENUM,
+        type: DataTypes.ENUM,
         values: ['client_application', 'web', 'middleware', 'authentication', 'database_connection'],
       },
     },
