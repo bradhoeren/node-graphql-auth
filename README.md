@@ -1,5 +1,5 @@
 # node-graphql-auth
-Started with Authentication server implementation with Node and GraphQL, expanding to provide HTTP endpoints for https://gitlab.unival.com/bhoeren/ng-internal-tools.
+Started with Authentication server implementation with Node and GraphQL, expanding to provide HTTP endpoints for ng-internal-tools.
 
 Based on the guide found here: https://css-tricks.com/lets-create-our-own-authentication-api-with-nodejs-and-graphql/
 
